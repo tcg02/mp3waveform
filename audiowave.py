@@ -18,7 +18,8 @@ def show_wave_n_spec(display_data):
     pylab.title('Wave from and spectrogram ')         
     pylab.show() 
 
-filename = "audiowave" 
+filename, file_extension = os.path.splitext(sys.argv[1]) 
+
 wavfile = mp3towav(filename)
 sound_info, f = get_wav_info(wavfile)
 df = pd.DataFrame (sound_info)
